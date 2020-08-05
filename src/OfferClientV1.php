@@ -17,7 +17,7 @@ class OfferClientV1
      */
     public function updateOfferId(OfferUpdate $offerUpdate)
     {
-        $updateResponse = Http::withBasicAuth(env('SPARAV_SUBSCRIPTION_API_USERNAME'), env('SPARAV_SUBSCRIPTION_API_PASSWORD'))
+        $updateResponse = Http::withBasicAuth(env('SPARAV_SUBSCRIPTION_API_AUTH_USERNAME'), env('SPARAV_SUBSCRIPTION_API_AUTH_PASSWORD'))
             ->put("https://sparavsubscriptionapiprod.azurewebsites.net/api/v1/subscription/offer", (array) $offerUpdate);
         return $updateResponse;
     }
