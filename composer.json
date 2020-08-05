@@ -1,0 +1,14 @@
+{
+    "name": "sparav/subscription",
+    "version": "1.0.0",
+    "description": "Sparav Subscription",
+    "type": "composer-plugin",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Sparav\\Subscription\\": "src/"
+        }
+    }
+}
