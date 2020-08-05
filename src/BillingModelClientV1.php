@@ -17,7 +17,7 @@ class BillingModelClientV1
      */
     public function updateBillingModel(BillingModelUpdate $billingModelUpdate) {
         $subscription = Http::withBasicAuth(env('SPARAV_SUBSCRIPTION_API_AUTH_USERNAME'), env('SPARAV_SUBSCRIPTION_API_AUTH_PASSWORD'))
-            ->put("https://sparavsubscriptionapiprod.azurewebsites.net/api/v1/subscription/billingmodel", (array) $billingModelUpdate);
+            ->put("https://sparavsubscriptionapiprod.azurewebsites.net/api/v1/billingmodel", (array) $billingModelUpdate);
         return $subscription;
     }
 
