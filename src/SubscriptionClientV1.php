@@ -18,7 +18,7 @@ class SubscriptionClientV1
      */
     public function add(array $subscriptions) {
         $add = Http::withBasicAuth(env('SPARAV_SUBSCRIPTION_API_AUTH_USERNAME'), env('SPARAV_SUBSCRIPTION_API_AUTH_PASSWORD'))
-            ->get("https://sparavsubscriptionapiprod.azurewebsites.net/api/v1/subscription", $subscriptions);
+            ->post("https://sparavsubscriptionapiprod.azurewebsites.net/api/v1/subscription", $subscriptions);
         return $add;
     }
 
