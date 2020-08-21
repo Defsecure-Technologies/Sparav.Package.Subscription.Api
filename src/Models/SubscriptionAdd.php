@@ -33,4 +33,17 @@ class SubscriptionAdd
     public string $sticky_customer_id;
 
 
+    public function __construct(int $order_id, string $sticky_subscription_id, string $sticky_order_id, int $customer_id, $sticky_customer_id)
+    {
+
+        $this->order_id = $order_id;
+        $this->sticky_subscription_id= $sticky_subscription_id;
+        $this->sticky_order_id = $sticky_order_id;
+        $this->customer_id = $customer_id;
+        $this->sticky_customer_id = $sticky_customer_id;
+
+
+    }
+
+
 }
