@@ -10,6 +10,7 @@ class BillingModelUpdate
      */
     public string $subscription_id;
 
+
     /**
      * @OA\Property(type="integer")
      */
