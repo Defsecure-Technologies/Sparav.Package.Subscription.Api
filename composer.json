@@ -1,8 +1,8 @@
 {
     "name": "sparav/subscription",
-    "version": "1.0.1",
+    "version": "1.0.12",
     "description": "Sparav Subscription",
-    "type": "composer-plugin",
+    "type": "MIT",
     "license": "MIT",
     "minimum-stability": "stable",
     "require": {},
