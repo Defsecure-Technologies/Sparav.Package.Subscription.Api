@@ -8,11 +8,6 @@ class SubscriptionAdd
 {
 
     /**
-     * @OA\Property(type="string")
-     */
-    public string $subscription_id;
-
-    /**
      * @OA\Property(type="integer")
      */
     public int $order_id;
