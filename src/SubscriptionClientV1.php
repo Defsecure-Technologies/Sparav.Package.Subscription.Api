@@ -36,11 +36,12 @@ class SubscriptionClientV1
     /**
      * Cancels the given subscription IDS.
      * @param array $subscription_ids
+     * @param int $customer_id (the holder of subscriptions).
      * @return object
      */
-    public function cancel(array $subscription_ids) {
+    public function cancel(array $subscription_ids, int $customer_id) {
         $subscriptions = Http::withBasicAuth(env('SPARAV_SUBSCRIPTION_API_AUTH_USERNAME'), env('SPARAV_SUBSCRIPTION_API_AUTH_PASSWORD'))
-            ->post("https://sparavsubscriptionapiprod.azurewebsites.net/api/v1/subscription/cancel", ['subscription_ids' => $subscription_ids])->object();
+            ->post("https://sparavsubscriptionapiprod.azurewebsites.net/api/v1/subscription/cancel", ['subscription_ids' => $subscription_ids, 'customer_id' => $customer_id])->object();
         return $subscriptions;
     }
 
