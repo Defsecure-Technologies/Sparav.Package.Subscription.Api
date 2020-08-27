@@ -6,9 +6,25 @@ use Illuminate\Support\Facades\Http;
 class SubscriptionClientV1
 {
 
-    public function subscription(string $subscription_id) {
+    /**
+     * Returns the subscription from our db.
+     * @param int $subscription_id
+     * @return \Illuminate\Http\Client\Response
+     */
+    public function subscription(int $subscription_id) {
         $subscription = Http::withBasicAuth(env('SPARAV_SUBSCRIPTION_API_AUTH_USERNAME'), env('SPARAV_SUBSCRIPTION_API_AUTH_PASSWORD'))
             ->get("https://sparavsubscriptionapiprod.azurewebsites.net/api/v1/subscription/{$subscription_id}");
+        return $subscription;
+    }
+
+    /**
+     * Returns subscription from sticky.
+     * @param string $subscription_id
+     * @return \Illuminate\Http\Client\Response
+     */
+    public function stickysubscription(string $subscription_id) {
+        $subscription = Http::withBasicAuth(env('SPARAV_SUBSCRIPTION_API_AUTH_USERNAME'), env('SPARAV_SUBSCRIPTION_API_AUTH_PASSWORD'))
+            ->get("https://sparavsubscriptionapiprod.azurewebsites.net/api/v1/subscription/sticky/{$subscription_id}");
         return $subscription;
     }
 
